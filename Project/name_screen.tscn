@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c08tqq8gqy16j"]
+
+[ext_resource type="Script" uid="uid://bt8y733mmwvmu" path="res://name_screen.gd" id="1_tjey6"]
+
+[node name="Control" type="Control" unique_id=883569969]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tjey6")
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=1051769480]
+layout_mode = 0
+offset_left = 446.0
+offset_top = 236.0
+offset_right = 700.0
+offset_bottom = 287.0
+text = "堂吉诃德"
+placeholder_text = "请输入文字"
+
+[node name="Button" type="Button" parent="." unique_id=569087636]
+layout_mode = 0
+offset_left = 537.0
+offset_top = 322.0
+offset_right = 598.0
+offset_bottom = 340.0
+text = "开始游戏"
+
+[connection signal="button_down" from="Button" to="." method="_on_new_game_button_down"]

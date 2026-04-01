@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://vqd0h00etvds"]
+
+[ext_resource type="Script" uid="uid://lljan8njsjcn" path="res://test_stacking_scene.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://cgrmjjbrdy37p" path="res://deck/deck.tscn" id="2_deck"]
+
+[node name="TestStackingScene" type="Control" unique_id=1110203624]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="." unique_id=799911863]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1, 0.12, 0.15, 1)
+
+[node name="TitleLabel" type="Label" parent="." unique_id=792740325]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 20.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "堆叠系统测试场景"
+horizontal_alignment = 1
+
+[node name="HelpLabel" type="Label" parent="." unique_id=1245657886]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 14
+text = "F5: 重新生成 | ESC: 退出 | 拖动卡牌测试堆叠效果"
+horizontal_alignment = 1
+
+[node name="TestDeck" parent="." unique_id=1351706749 instance=ExtResource("2_deck")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -884.0
+offset_top = -518.0
+offset_right = 646.0
+offset_bottom = 514.0
+maxWeight = 500
+
+[node name="InstructionPanel" type="Panel" parent="." unique_id=1845202960]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -280.0
+offset_top = 80.0
+offset_right = -20.0
+offset_bottom = 280.0
+grow_horizontal = 0
+
+[node name="Instructions" type="Label" parent="InstructionPanel" unique_id=1146093812]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "测试说明：
+
+同名卡牌堆叠：
+- 拖动到同名卡牌上
+- 应完全重合
+- 数量相加显示
+
+不同名卡牌堆叠：
+- 拖动到不同名卡牌附近
+- 应1/4偏移排列
+- 可单独拖动
+
+测试数据：
+- 3张 ice
+- 2张 Stone
+- 1张 Glod
+- 1张 npc_1
+- 1张 site_1"
+autowrap_mode = 2

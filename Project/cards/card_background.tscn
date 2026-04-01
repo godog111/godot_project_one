@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://clovmnd4s14b7"]
+
+[node name="cardBackground" type="Control" unique_id=1098210742]
+custom_minimum_size = Vector2(220, 340)
+layout_mode = 3
+anchors_preset = 0

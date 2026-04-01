@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://c8m2q1p3x7lav"]
+
+[ext_resource type="Script" uid="uid://uryotbx88m1a" path="res://cards/card_table_main.gd" id="1_main"]
+
+[node name="CardTableMain" type="Control" unique_id=1948276567]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 525.0
+offset_right = -273.0
+offset_bottom = -82.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_main")
+
+[node name="Background" type="ColorRect" parent="." unique_id=2068378648]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.12, 0.15, 0.18, 1)
+
+[node name="Cards" type="Control" parent="." unique_id=549373304]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="." unique_id=398217851]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 20.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "卡牌桌 — 网格锚点吸附"
+horizontal_alignment = 1
+
+[node name="HelpLabel" type="Label" parent="." unique_id=816005218]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -80.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 14
+text = "拖动卡牌自动吸附锚点 | 中键拖动桌面 | F1调试 | F4重生成 | ESC退出"
+horizontal_alignment = 1
+
+[node name="AddIceButton" type="Button" parent="." unique_id=591032219]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -120.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 60.0
+grow_horizontal = 0
+text = "+ 添加 ice 卡牌"
+
+[node name="TestEventButton" type="Button" parent="." unique_id=591032220]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -180.0
+offset_top = 70.0
+offset_right = -20.0
+offset_bottom = 110.0
+grow_horizontal = 0
+text = "🎲 测试事件面板"
+
+[node name="DeleteZone" type="ColorRect" parent="." unique_id=782092899]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -260.0
+offset_top = -360.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(0.8, 0.2, 0.2, 0.3)
+
+[node name="DeleteLabel" type="Label" parent="DeleteZone" unique_id=236948316]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+text = "拖到此处
+删除卡牌"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="AddIceButton" to="." method="_on_add_ice_button_pressed"]
+[connection signal="pressed" from="TestEventButton" to="." method="_on_test_event_button_pressed"]

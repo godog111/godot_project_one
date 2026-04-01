@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://b8xntvvonnaax"]
+
+[ext_resource type="Script" uid="uid://cqk1qmwl6b6id" path="res://start_screen.gd" id="1_ncxyx"]
+
+[node name="Control" type="Control" unique_id=64505526]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ncxyx")
+
+[node name="Button" type="Button" parent="." unique_id=988937272]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 211.0
+offset_right = 482.0
+offset_bottom = 242.0
+text = "新游戏"
+
+[node name="Button2" type="Button" parent="." unique_id=2102178035]
+layout_mode = 0
+offset_left = 419.0
+offset_top = 174.0
+offset_right = 491.0
+offset_bottom = 205.0
+text = "继续游戏"
+
+[node name="ButtonTableTest" type="Button" parent="." unique_id=1202178036]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 250.0
+offset_right = 500.0
+offset_bottom = 281.0
+text = "牌桌测试"
+
+[node name="ButtonQuit" type="Button" parent="." unique_id=1202178037]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 290.0
+offset_right = 500.0
+offset_bottom = 321.0
+text = "关闭游戏"
+
+[connection signal="button_down" from="Button" to="." method="_on_new_game_button_down"]
+[connection signal="button_down" from="Button2" to="." method="_on_continue_button_down"]
+[connection signal="button_down" from="ButtonTableTest" to="." method="_on_table_test_button_down"]

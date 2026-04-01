@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://c22id77vgv77k"]
+
+[ext_resource type="Script" uid="uid://4r1he1i5tsiu" path="res://cards/site_card.gd" id="1_f2w7u"]
+[ext_resource type="Script" uid="uid://c6fjuk62il5na" path="res://cards/get_in_button.gd" id="2_57nfb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ivai2"]
+draw_center = false
+
+[sub_resource type="Theme" id="Theme_nwofj"]
+Button/styles/normal = SubResource("StyleBoxFlat_ivai2")
+
+[node name="siteCard" type="Control" unique_id=367944285]
+custom_minimum_size = Vector2(240, 340)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 240.0
+offset_bottom = 340.0
+script = ExtResource("1_f2w7u")
+
+[node name="TextureRect" type="Panel" parent="." unique_id=1891909049]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 11.0
+offset_right = 233.0
+offset_bottom = 328.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect" unique_id=1961012976]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 6.0
+offset_right = 224.0
+offset_bottom = 303.0
+scale = Vector2(0.9626981, 1.017807)
+
+[node name="siteImg" type="TextureRect" parent="TextureRect/VBoxContainer" unique_id=346240686]
+custom_minimum_size = Vector2(220, 270)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/VBoxContainer" unique_id=762252253]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 16
+text = "地图大小"
+horizontal_alignment = 1
+
+[node name="getInButton" type="Button" parent="." unique_id=656781560]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 12.0
+offset_right = -10.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_nwofj")
+script = ExtResource("2_57nfb")
+
+[node name="Panel" type="Panel" parent="getInButton" unique_id=1960237660]
+visible = false
+layout_mode = 0
+offset_left = 16.0
+offset_top = 9.0
+offset_right = 128.0
+offset_bottom = 37.0
+
+[node name="Label" type="Label" parent="getInButton/Panel" unique_id=822627189]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 98.0
+offset_bottom = 25.0
+theme_override_font_sizes/font_size = 16
+text = "地图描述文字"
+
+[connection signal="button_down" from="getInButton" to="." method="_on_get_in_button_button_down"]
+[connection signal="mouse_entered" from="getInButton" to="getInButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="getInButton" to="getInButton" method="_on_mouse_exited"]

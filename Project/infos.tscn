@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://6inkiy8ni6fa"]
+
+[ext_resource type="Script" uid="uid://dhy6wirh2263k" path="res://infos.gd" id="1_ek0vb"]
+[ext_resource type="PackedScene" uid="uid://ckeoobuc787p4" path="res://deck/handDeck.tscn" id="2_kkfdx"]
+[ext_resource type="Script" uid="uid://bu58pxvd7voa0" path="res://option.gd" id="3_obuaq"]
+
+[node name="infos" type="CanvasLayer" unique_id=1791954727]
+visible = false
+script = ExtResource("1_ek0vb")
+
+[node name="handDeck" parent="." unique_id=1721965373 groups=["saveableDecks"] instance=ExtResource("2_kkfdx")]
+offset_left = 1.0
+offset_top = 819.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="option" type="Button" parent="." unique_id=1858723160]
+offset_left = 25.0
+offset_top = 45.0
+offset_right = 65.0
+offset_bottom = 76.0
+text = "选项
+"
+script = ExtResource("3_obuaq")
+
+[node name="moneyLabel" type="Label" parent="." unique_id=118002795]
+offset_right = 162.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 30
+text = "1000
+"
+
+[connection signal="button_down" from="option" to="option" method="_on_button_down"]

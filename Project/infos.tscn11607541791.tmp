@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://6inkiy8ni6fa"]
+
+[ext_resource type="Script" uid="uid://dhy6wirh2263k" path="res://infos.gd" id="1_ek0vb"]
+[ext_resource type="PackedScene" uid="uid://ckeoobuc787p4" path="res://deck/handDeck.tscn" id="2_kkfdx"]
+
+[node name="infos" type="CanvasLayer" unique_id=1791954727]
+script = ExtResource("1_ek0vb")
+
+[node name="handDeck" parent="." unique_id=1721965373 instance=ExtResource("2_kkfdx")]
+offset_left = 1.0
+offset_top = 481.0
+offset_right = 0.0
+offset_bottom = 0.0

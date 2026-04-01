@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://6bk7q3x50afv"]
+
+[ext_resource type="Script" uid="uid://c4sigl52j4j5c" path="res://deck/changeable_deck.gd" id="1_q4kps"]
+[ext_resource type="Script" uid="uid://ovk4ed0n5b5u" path="res://deck/delete.gd" id="2_yssse"]
+
+[node name="deck" type="Panel" unique_id=1721965373 groups=["cardDeck", "cardDropable", "saveableDecks"]]
+offset_left = 251.0
+offset_top = 275.0
+offset_right = 1191.0
+offset_bottom = 475.0
+script = ExtResource("1_q4kps")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1928809691]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -47.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="cardPoiDeck" type="HBoxContainer" parent="ScrollContainer" unique_id=458004503]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="cardDeck" type="Control" parent="." unique_id=354464236]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1019869697]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 43.0
+grow_vertical = 2
+value = 17.0
+fill_mode = 3
+
+[node name="weight" type="Label" parent="." unique_id=1004402346]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0/100"
+
+[node name="Panel" type="Panel" parent="." unique_id=276501541]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -55.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="getAll" type="Button" parent="Panel" unique_id=1122956667]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 10.0
+offset_right = 45.0
+offset_bottom = 41.0
+text = "全拿"
+
+[node name="compressed" type="Button" parent="Panel" unique_id=1088219033]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 47.0
+offset_right = 35.0
+offset_bottom = 77.0
+toggle_mode = true
+text = "紧凑"
+
+[node name="delete" type="Button" parent="Panel" unique_id=1222786159]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 6.0
+offset_top = 84.0
+offset_right = 46.0
+offset_bottom = 115.0
+text = "删除"
+script = ExtResource("2_yssse")
+
+[connection signal="child_entered_tree" from="ScrollContainer/cardPoiDeck" to="." method="_on_card_poi_deck_child_entered_tree"]
+[connection signal="button_down" from="Panel/getAll" to="." method="_on_get_all_button_down"]
+[connection signal="button_up" from="Panel/getAll" to="." method="_on_get_all_button_up"]
+[connection signal="toggled" from="Panel/compressed" to="." method="_on_compressed_toggled"]
+[connection signal="mouse_entered" from="Panel/delete" to="." method="_on_delete_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/delete" to="." method="_on_delete_mouse_exited"]

@@ -1,0 +1,62 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="新建游戏项目"
+run/main_scene="uid://c8m2q1p3x7lav"
+config/features=PackedStringArray("4.6", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+CardInfo="*res://assets/cardInfo.gd"
+VfSlayer="*uid://d3j71omtysoao"
+Infos="*uid://6inkiy8ni6fa"
+PauseMenu="*uid://ddtrb3n6f583"
+NpcManager="*uid://d126clca20xxp"
+DialogueManager="*uid://c3rodes2l3gxb"
+MCPRuntimeBridge="*uid://wk2yhw3winuo"
+
+[dialogue_manager]
+
+runtime/balloon_path="res://assets/balloon.tscn"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
+[dotnet]
+
+project/assembly_name="新建游戏项目"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/godot_dotnet_mcp/plugin.cfg")
+
+[global_group]
+
+cardDropable=""
+cardDeck=""
+saveableDecks=""
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://dio/dialogue.dialogue")
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+rendering_device/driver.windows="d3d12"

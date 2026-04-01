@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://ddtrb3n6f583"]
+
+[ext_resource type="Script" uid="uid://bwiwae7xm36jl" path="res://pause_menu.gd" id="1_hdmo1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wyi4u"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=2137708780]
+process_mode = 3
+layer = 13
+visible = false
+script = ExtResource("1_hdmo1")
+
+[node name="Panel" type="Panel" parent="." unique_id=598138927]
+self_modulate = Color(1, 1, 1, 0.6117647)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel2" type="Panel" parent="." unique_id=1904953342]
+custom_minimum_size = Vector2(500, 400)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="backToGame" type="Button" parent="Panel2" unique_id=1251156087]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 68.0
+offset_right = 330.0
+offset_bottom = 115.0
+text = "返回游戏"
+
+[node name="qucikSave" type="Button" parent="Panel2" unique_id=886303272]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 127.0
+offset_right = 330.0
+offset_bottom = 174.0
+text = "快速保存"
+
+[node name="saves" type="Button" parent="Panel2" unique_id=1470335176]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 190.0
+offset_right = 330.0
+offset_bottom = 237.0
+text = "存档列表"
+
+[node name="exitGame" type="Button" parent="Panel2" unique_id=2105922112]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 251.0
+offset_right = 331.0
+offset_bottom = 298.0
+text = "退出游戏"
+
+[node name="savePanel" type="Panel" parent="." unique_id=1647974532]
+visible = false
+custom_minimum_size = Vector2(500, 550)
+offset_left = 331.0
+offset_top = 16.0
+offset_right = 831.0
+offset_bottom = 566.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wyi4u")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="savePanel" unique_id=1273134688]
+layout_mode = 0
+offset_top = 87.0
+offset_right = 500.0
+offset_bottom = 530.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="savePanel/ScrollContainer" unique_id=1640910884]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="savePanel" unique_id=1459406316]
+layout_mode = 0
+offset_top = 19.0
+offset_right = 133.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 30
+text = "存档列表"
+
+[node name="saveNewButton" type="Button" parent="savePanel" unique_id=1722742699]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 31.0
+offset_right = 242.0
+offset_bottom = 51.0
+text = "新存档"
+
+[node name="backButton" type="Button" parent="savePanel" unique_id=49019589]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 31.0
+offset_right = 321.0
+offset_bottom = 62.0
+text = "关闭"
+
+[connection signal="button_down" from="Panel2/backToGame" to="." method="_on_back_button_down"]
+[connection signal="button_down" from="Panel2/qucikSave" to="." method="_on_quick_save_button_down"]
+[connection signal="button_down" from="Panel2/saves" to="." method="_on_saves_button_down"]
+[connection signal="button_down" from="Panel2/exitGame" to="." method="_on_exit_game_button_down"]
+[connection signal="button_down" from="savePanel/saveNewButton" to="." method="_on_save_new_button_down"]
+[connection signal="button_down" from="savePanel/backButton" to="." method="_on_save_back_button_down"]

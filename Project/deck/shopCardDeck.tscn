@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://u2ualhyjwfok"]
+
+[ext_resource type="Script" uid="uid://w2wjyxwgtibp" path="res://deck/shop_card_deck.gd" id="1_5dyur"]
+
+[node name="shopCardDeck" type="Panel" unique_id=1721965373]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -8.0
+offset_bottom = -288.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5dyur")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1928809691]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="cardPoiDeck" type="HBoxContainer" parent="ScrollContainer" unique_id=458004503]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="cardDeck" type="Control" parent="." unique_id=354464236]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1019869697]
+visible = false
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 51.0
+grow_vertical = 2
+value = 17.0
+fill_mode = 3
+
+[node name="weight" type="Label" parent="." unique_id=1004402346]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0/100"

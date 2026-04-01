@@ -1,0 +1,15 @@
+
+~ cat
+Nathan: oi,oi,你来了
+Nathan: 你要来点马？
+ - 挺起来不错
+	Nathan:试试吧
+	do NpcManager.npc_give_card("Gold_ore",5)
+- 算了吧
+Nathan: 下次见
+do NpcManager.esc_dialouge()
+=> END
+
+~ deal
+商店老板：成交
+=> END

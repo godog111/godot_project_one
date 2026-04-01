@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://djeb0cuoeaeet"]
+
+[ext_resource type="Script" uid="uid://baug6sjxte6y2" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://tj6odkahs5aa" path="res://cards/card.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://cgrmjjbrdy37p" path="res://deck/deck.tscn" id="2_0xm2m"]
+
+[node name="Node2D" type="Node2D" unique_id=835634590 node_paths=PackedStringArray("scene_1", "scene_2", "scene_3")]
+script = ExtResource("1_h2yge")
+scene_1 = NodePath("deck")
+scene_2 = NodePath("deck2")
+scene_3 = NodePath("deck3")
+maxRandomItemNum = 1
+minRandomItemNum = 5
+siteItems = {
+"Glod": 50,
+"Stone": 30,
+"ice": 100
+}
+
+[node name="Control" type="Control" parent="." unique_id=388599109]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Control2" parent="." unique_id=367944285 node_paths=PackedStringArray("follow_target") instance=ExtResource("1_ig7tw")]
+follow_target = NodePath("../Control")
+
+[node name="deck" parent="." unique_id=1721965373 instance=ExtResource("2_0xm2m")]
+offset_left = 244.0
+offset_top = 200.0
+offset_right = 1148.0
+offset_bottom = 398.0
+
+[node name="deck2" parent="." unique_id=157597231 instance=ExtResource("2_0xm2m")]
+offset_left = 244.0
+offset_top = 2.0
+offset_right = 1148.0
+offset_bottom = 200.0
+
+[node name="deck3" parent="." unique_id=2049007518 instance=ExtResource("2_0xm2m")]
+offset_left = 244.0
+offset_top = 399.0
+offset_right = 1148.0
+offset_bottom = 597.0
+
+[node name="Button" type="Button" parent="." unique_id=114161754]
+offset_left = 92.0
+offset_top = 420.0
+offset_right = 176.0
+offset_bottom = 464.0
+text = "抽卡"
+
+[connection signal="button_down" from="Button" to="." method="get_some_card"]

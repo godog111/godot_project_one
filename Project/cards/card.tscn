@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://tj6odkahs5aa"]
+
+[ext_resource type="Texture2D" uid="uid://oya8wpn6jmc8" path="res://icon.svg" id="1_ivai2"]
+[ext_resource type="Script" uid="uid://bbfod7qfnm6by" path="res://cards/card.gd" id="1_nwofj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ivai2"]
+draw_center = false
+
+[sub_resource type="Theme" id="Theme_nwofj"]
+Button/styles/normal = SubResource("StyleBoxFlat_ivai2")
+
+[node name="Control" type="Control" unique_id=367944285]
+custom_minimum_size = Vector2(240, 340)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 240.0
+offset_bottom = 340.0
+script = ExtResource("1_nwofj")
+
+[node name="Control" type="Panel" parent="." unique_id=336231071]
+custom_minimum_size = Vector2(220, 317)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.041666668
+anchor_top = 0.03382353
+anchor_right = 0.9583333
+anchor_bottom = 0.96617645
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1058829748]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 9.5
+offset_right = -12.0
+offset_bottom = -12.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="itemImg" type="TextureRect" parent="Control/ColorRect" unique_id=53221364]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ivai2")
+stretch_mode = 2
+
+[node name="name" type="Label" parent="Control/ColorRect" unique_id=1164783266]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 213.0
+offset_right = 134.0
+offset_bottom = 236.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "你的卡牌"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=656781560]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 12.0
+offset_right = -10.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_nwofj")
+
+[node name="AllButton" type="Button" parent="." unique_id=945952998]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 36.0
+offset_right = 63.0
+offset_bottom = 48.0
+text = "X1"
+alignment = 0
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="button_down" from="AllButton" to="." method="_on_all_button_button_down"]

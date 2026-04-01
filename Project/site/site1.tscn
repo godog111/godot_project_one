@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://djeb0cuoeaeet"]
+
+[ext_resource type="Script" uid="uid://baug6sjxte6y2" path="res://site/main.gd" id="1_6j1h7"]
+[ext_resource type="PackedScene" uid="uid://cgrmjjbrdy37p" path="res://deck/deck.tscn" id="2_2vui8"]
+[ext_resource type="Script" uid="uid://ihhfri72cj14" path="res://site/goto_button.gd" id="3_2vui8"]
+[ext_resource type="PackedScene" uid="uid://6bk7q3x50afv" path="res://deck/changeableDeck.tscn" id="4_34a6l"]
+
+[node name="site1" type="Node2D" unique_id=835634590]
+script = ExtResource("1_6j1h7")
+maxRandomItemNum = 1
+minRandomItemNum = 5
+siteItems = {
+"ice": 20
+}
+
+[node name="Control" type="Control" parent="." unique_id=388599109]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 5.0
+offset_top = -2.0
+offset_right = 45.0
+offset_bottom = 38.0
+
+[node name="deck" parent="." unique_id=157597231 instance=ExtResource("2_2vui8")]
+offset_left = 206.0
+offset_top = 2.0
+offset_right = 1148.0
+offset_bottom = 200.0
+
+[node name="Button" type="Button" parent="." unique_id=114161754]
+offset_left = 92.0
+offset_top = 420.0
+offset_right = 176.0
+offset_bottom = 464.0
+text = "抽卡"
+
+[node name="gotoButton" type="Button" parent="." unique_id=1707399599]
+offset_left = 97.0
+offset_top = 379.0
+offset_right = 174.0
+offset_bottom = 410.0
+text = "前往site2
+"
+script = ExtResource("3_2vui8")
+site = "res://site/site2.tscn"
+
+[node name="Label" type="Label" parent="gotoButton" unique_id=1628384148]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -28.0
+offset_right = 78.0
+offset_bottom = 21.0
+text = "site1"
+
+[node name="deck2" parent="." unique_id=1721965373 instance=ExtResource("4_34a6l")]
+offset_left = 208.0
+offset_top = 204.0
+offset_right = 1148.0
+offset_bottom = 404.0
+
+[connection signal="button_down" from="Button" to="." method="get_some_card"]
+[connection signal="button_down" from="gotoButton" to="gotoButton" method="_on_button_down"]

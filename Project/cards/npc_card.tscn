@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bccpje7j1smlg"]
+
+[ext_resource type="Script" uid="uid://cn6w2hs7s2q58" path="res://cards/npc_card.gd" id="1_28hu7"]
+
+[node name="npcCard" type="Control" unique_id=268459844]
+custom_minimum_size = Vector2(220, 317)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_28hu7")
+
+[node name="TextureRect" type="Panel" parent="." unique_id=593875361]
+custom_minimum_size = Vector2(220, 317)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="siteImg" type="TextureRect" parent="TextureRect" unique_id=1963715489]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 6.609919
+offset_top = -151.37405
+offset_right = -5.5448456
+offset_bottom = 146.13419
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="npcImg" type="TextureRect" parent="TextureRect" unique_id=144971362]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.7675
+offset_top = 108.67067
+offset_right = -161.55357
+offset_bottom = -153.28154
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4.7756214, 3.6411796)
+
+[node name="Button" type="Button" parent="." unique_id=1837570245]
+layout_mode = 0
+offset_right = 223.26837
+offset_bottom = 318.88608
+
+[node name="nameLabel" type="Label" parent="." unique_id=841593528]
+layout_mode = 0
+offset_left = 71.240234
+offset_top = 17.814863
+offset_right = 143.94934
+offset_bottom = 41.86493
+text = "NPC名字"
+
+[connection signal="button_down" from="Button" to="." method="_on_cardnpc_button_down"]
